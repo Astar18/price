@@ -1,0 +1,24 @@
+
+
+.footer {
+    background-color: #0d47a1; /* Color de fondo del footer */
+    color: #ffffff; /* Color de texto */
+    padding: 20px 0; /* Espaciado interno */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .social-link {
+    display: inline-block;
+    width: 30px; /* Ancho del logo */
+    height: 30px; /* Altura del logo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 10px; /* Espaciado entre los logos de redes sociales */
+  }
+  
+  .social-link:hover {
+    opacity: 0.8; /* Cambiar la opacidad al pasar el ratón sobre los logos de redes sociales */
+  }
+  

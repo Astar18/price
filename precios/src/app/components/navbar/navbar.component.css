@@ -1,0 +1,25 @@
+.navbar {
+    margin-bottom: 20px;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  /* Cambiar el color de los enlaces en la barra de navegación */
+  .navbar-dark .navbar-nav .nav-link {
+    color: #ffffff !important; /* Blanco */
+  }
+  
+  /* Cambiar el color de los enlaces activos en la barra de navegación */
+  .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #ffffff !important; /* Blanco */
+    background-color: #1565c0 !important; /* Azul un poco más claro */
+  }
+  
+  /* Cambiar el color de los enlaces al pasar el ratón */
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffffff !important; /* Blanco */
+    background-color: #1976d2 !important; /* Azul aún más claro */
+  }
+  

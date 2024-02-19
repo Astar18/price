@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="formulario">
+          <h2>Consulta de Precios por Código de Barras</h2>
+          <form (ngSubmit)="buscarPrecio()">
+            <div class="form-group">
+              <label for="codigoBarras">Código de Barras:</label>
+              <!-- Cambiamos el campo de entrada para que acepte el código de barras -->
+              <input type="text" id="codigoBarras" name="codigoBarras" class="form-control" placeholder="Código de Barras" [(ngModel)]="codigoBarras" (ngModelChange)="buscarPrecio()">
+            </div>
+            <!-- Eliminamos el botón de búsqueda -->
+            <!-- <button type="submit" class="btn btn-primary">Buscar</button> -->
+          </form>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="resultado" *ngIf="mostrarResultado">
+          <h3>Resultado de la búsqueda</h3>
+          <p>Producto: {{ resultadoPrecio.nombre }}</p>
+          <p>Precio: {{ resultadoPrecio.precio | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

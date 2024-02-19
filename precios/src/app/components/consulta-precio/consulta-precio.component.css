@@ -1,0 +1,13 @@
+
+.container-fluid {
+    padding-top: 20px; /* Espacio superior */
+    padding-bottom: 20px; /* Espacio inferior */
+  }
+  
+  .formulario, .resultado {
+    padding: 200px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
