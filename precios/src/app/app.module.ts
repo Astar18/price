@@ -7,7 +7,8 @@ import { ConsultaPrecioComponent } from './components/consulta-precio/consulta-p
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpClientXsrfModule, HttpXsrfTokenExtractor } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +21,13 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpClientXsrfModule,
     FormsModule,
     
   ],
   providers: [
-    provideClientHydration()
+    provideHttpClient(HttpClient, { withFetch: true }), // Habilitar fetch
+    { provide: HttpXsrfTokenExtractor, useClass: HttpClientXsrfModule },
   ],
   bootstrap: [AppComponent]
 })
