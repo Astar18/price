@@ -1,6 +1,6 @@
 // dbQueries.js
 
-const db = require('./db');
+const db = require('./app.js');
 
 function obtenerProductos(callback) {
   db.query('SELECT * FROM productos', (err, productos) => {
