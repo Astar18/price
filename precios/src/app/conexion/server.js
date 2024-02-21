@@ -1,8 +1,5 @@
-// server.js
-
 const express = require('express');
 const mysql = require('mysql');
-const dbQueries = require('./dbQueries'); // Importa las consultas a la base de datos
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,19 +16,21 @@ const db = mysql.createConnection({
 db.connect((err) => {
   if (err) {
     console.error('Error al conectar a la base de datos:', err);
-    return;
+    process.exit(1); // Detener la ejecución del servidor si hay un error
   }
   console.log('Conexión exitosa a la base de datos MySQL');
 });
 
 // Definir las rutas de tu API
+// Endpoint para obtener todos los productos
 app.get('/api/productos', (req, res) => {
-  dbQueries.obtenerProductos((err, productos) => {
-    if (err) {
-      res.status(500).send('Error al obtener productos');
-      return;
+  db.query('SELECT * FROM productos', (error, results) => {
+    if (error) {
+      console.error('Error al obtener productos:', error);
+      res.status(500).json({ error: 'Error al obtener productos' }); // Enviar mensaje de error en la respuesta JSON
+    } else {
+      res.json(results);
     }
-    res.json(productos);
   });
 });
 
